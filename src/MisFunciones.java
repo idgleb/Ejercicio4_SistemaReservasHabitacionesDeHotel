@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.time.LocalDate;
 
-public class MisFunciones {
+public abstract class MisFunciones {
 
     public static boolean isNumeroDe_1_10000000(String str) {
         if (str.isEmpty()) {
