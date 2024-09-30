@@ -6,9 +6,7 @@ public class Habitacion {
     private String tipoHabitacion;
     private double precioPorNoche;
     private Hotel hotel;
-
     private static Habitacion[] habitaciones = new Habitacion[0];
-
 
     public Habitacion(int numeroHabitacion, String tipoHabitacion, double precioPorNoche, Hotel hotel) {
         this.numeroHabitacion = numeroHabitacion;

@@ -7,7 +7,6 @@ public class Cliente {
     private LocalDate[] fechaEntrada;
     private LocalDate[] fechaSalida;
     private Habitacion[] habitaciones;
-
     private static Cliente[] clientes = new Cliente[0];
 
     public Cliente(String nombre) {
