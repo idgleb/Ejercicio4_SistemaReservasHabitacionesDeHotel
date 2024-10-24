@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Objects;
 
 public class Cliente {
@@ -25,14 +26,21 @@ public class Cliente {
     }
 
     public static String[] getClientesInfo() {
+
         String[] clientesInfo = new String[clientes.length];
         for (int i = 0; i < clientes.length; i++) {
-            clientesInfo[i] = clientes[i].nombre + " ";
+            clientesInfo[i] = clientes[i].nombre + "\n";
             for (int j = 0; j < clientes[i].habitaciones.length; j++) {
+
+                Period period = Period.between(clientes[i].fechaEntrada[j], clientes[i].fechaSalida[j]);
+                int dias = period.getDays();
+                double montoTotal = dias * clientes[i].habitaciones[j].getPrecioPorNoche();
+
                 clientesInfo[i] += " (Habit: " + clientes[i].habitaciones[j].getNumeroHabitacion() +
                         " " + clientes[i].habitaciones[j].getTipoHabitacion() +
                 " fecha entr: " + clientes[i].fechaEntrada[j] +
-                " fecha salida: " + clientes[i].fechaSalida[j] + ") ";
+                " fecha salida: " + clientes[i].fechaSalida[j] + ") "+
+                "(dias: " + dias + " Monto total: " + montoTotal + ")\n";
             }
         }
         return clientesInfo;
